@@ -598,7 +598,7 @@ class _BrightnessPageState extends State<BrightnessPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.brightness_high, size: 80, color: Colors.amber.withValues(alpha: _brightness)),
+              Icon(Icons.brightness_high, size: 80, color: Colors.amber.withOpacity(_brightness)),
               const SizedBox(height: 32),
               Slider(
                 value: _brightness,

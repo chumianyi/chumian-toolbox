@@ -27,12 +27,12 @@ class FavoritesScreen extends StatelessWidget {
                   onLongPress: () => favProvider.toggleFavorite(tool.id),
                   child: Container(
                     padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: Theme.of(context).colorScheme.surface, borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.grey.withValues(alpha: 0.2))),
+                    decoration: BoxDecoration(color: Theme.of(context).colorScheme.surface, borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.grey.withOpacity(0.2))),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Stack(children: [
-                          Container(width: 44, height: 44, decoration: BoxDecoration(color: tool.category.color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)), child: Icon(tool.icon, color: tool.category.color, size: 24)),
+                          Container(width: 44, height: 44, decoration: BoxDecoration(color: tool.category.color.withOpacity(0.1), borderRadius: BorderRadius.circular(12)), child: Icon(tool.icon, color: tool.category.color, size: 24)),
                           const Positioned(right: -2, top: -2, child: Icon(Icons.favorite, size: 14, color: Colors.red)),
                         ]),
                         const SizedBox(height: 6),

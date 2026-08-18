@@ -314,7 +314,7 @@ class _UnitConverterPageState extends State<UnitConverterPage> {
             ),
             const SizedBox(height: 32),
             Card(
-              color: Colors.blue.withValues(alpha: 0.1),
+              color: Colors.blue.withOpacity(0.1),
               child: Padding(
                 padding: const EdgeInsets.all(24),
                 child: Center(child: Text(_result, style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold))),
@@ -676,7 +676,7 @@ class _DateCalcPageState extends State<DateCalcPage> {
             const SizedBox(height: 32),
             if (_result.isNotEmpty)
               Card(
-                color: Colors.blue.withValues(alpha: 0.1),
+                color: Colors.blue.withOpacity(0.1),
                 child: Padding(
                   padding: const EdgeInsets.all(24),
                   child: Text(_result, style: const TextStyle(fontSize: 20), textAlign: TextAlign.center),
@@ -738,7 +738,7 @@ class _AgeCalcPageState extends State<AgeCalcPage> {
             const SizedBox(height: 32),
             if (_result.isNotEmpty)
               Card(
-                color: Colors.green.withValues(alpha: 0.1),
+                color: Colors.green.withOpacity(0.1),
                 child: Padding(
                   padding: const EdgeInsets.all(24),
                   child: Text(_result, style: const TextStyle(fontSize: 20), textAlign: TextAlign.center),
@@ -802,7 +802,7 @@ class _BmiPageState extends State<BmiPage> {
             const SizedBox(height: 32),
             if (_result.isNotEmpty)
               Card(
-                color: _color.withValues(alpha: 0.1),
+                color: _color.withOpacity(0.1),
                 child: Padding(
                   padding: const EdgeInsets.all(24),
                   child: Column(

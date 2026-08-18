@@ -348,7 +348,7 @@ class _SiteStatusPageState extends State<SiteStatusPage> {
             const SizedBox(height: 32),
             if (_status.isNotEmpty)
               Card(
-                color: _statusCode == 200 ? Colors.green.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
+                color: _statusCode == 200 ? Colors.green.withOpacity(0.1) : Colors.red.withOpacity(0.1),
                 child: Padding(
                   padding: const EdgeInsets.all(24),
                   child: Column(
