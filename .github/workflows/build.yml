@@ -1,0 +1,75 @@
+name: Build Release APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.6'
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate signing key
+        run: |
+          keytool -genkey -v -keystore android/app/upload-keystore.jks \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -alias upload -storepass chumian123 -keypass chumian123 \
+            -dname "CN=Chumian, OU=ChumianStudio, O=Chumian, L=Beijing, S=Beijing, C=CN"
+
+      - name: Build APK
+        run: flutter build apk --release --split-per-abi
+
+      - name: List build outputs
+        run: ls -la build/app/outputs/flutter-apk/
+
+      - name: Upload APK artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: chumian-toolbox-apk
+          path: build/app/outputs/flutter-apk/*.apk
+          retention-days: 30
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0.0
+          name: 初眠工具箱 v1.0.0
+          body: |
+            ## 初眠工具箱 v1.0.0
+            
+            包含 112 款真实可用的工具，涵盖六大分类：
+            
+            - 🔧 系统工具 (20款)
+            - 🏠 日常工具 (28款)
+            - 🌐 网络工具 (15款)
+            - 🖼️ 图片工具 (14款)
+            - 💻 开发工具 (25款)
+            - 🎵 影音工具 (10款)
+            
+            ### 特性
+            - Material 3 设计，支持深色/浅色主题
+            - 工具搜索、收藏、最近使用
+            - 每个工具独立页面，功能完整
+          files: |
+            build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+            build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
