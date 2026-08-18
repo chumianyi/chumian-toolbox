@@ -24,7 +24,7 @@ class DevTools {
     {'id': 'text_replace', 'name': '文本替换', 'desc': '批量替换文本', 'icon': Icons.find_in_page},
     {'id': 'case_convert', 'name': '大小写转换', 'desc': '大小写格式转换', 'icon': Icons.text_format},
     {'id': 'zh_convert', 'name': '简繁转换', 'desc': '简体繁体互转', 'icon': Icons.auto_awesome},
-    {'id': 'word_count', 'name': '字数统计', 'desc': '统计字数字符数', 'icon': Icons.count},
+    {'id': 'word_count', 'name': '字数统计', 'desc': '统计字数字符数', 'icon': Icons.numbers},
     {'id': 'markdown', 'name': 'Markdown预览', 'desc': 'Markdown实时预览', 'icon': Icons.preview},
     {'id': 'sql_format', 'name': 'SQL格式化', 'desc': '格式化SQL语句', 'icon': Icons.storage},
     {'id': 'csv_viewer', 'name': 'CSV查看器', 'desc': '查看CSV数据', 'icon': Icons.table_chart},

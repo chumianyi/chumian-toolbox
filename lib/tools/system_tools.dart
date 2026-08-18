@@ -65,10 +65,10 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
         '构建类型': info.type,
         'CPU架构': info.supportedAbis.join(', '),
         '屏幕分辨率': '${info.displayMetrics.widthPx.toInt()} x ${info.displayMetrics.heightPx.toInt()}',
-        '屏幕DPI': info.displayMetrics.densityDpi.toString(),
+        '屏幕DPI': (info.displayMetrics.density * 160).toInt().toString(),
         '物理尺寸': '${info.displayMetrics.widthInches.toStringAsFixed(1)} x ${info.displayMetrics.heightInches.toStringAsFixed(1)} 英寸',
         '是否Root': info.isPhysicalDevice ? '否(物理设备)' : '是(模拟器)',
-        'Android ID': info.androidId,
+        '设备ID': info.id,
       };
       _loading = false;
     });
@@ -136,7 +136,6 @@ class _BatteryInfoPageState extends State<BatteryInfoPage> {
       case BatteryState.charging: return '充电中';
       case BatteryState.discharging: return '放电中';
       case BatteryState.full: return '已充满';
-      case BatteryState.connected: return '已连接';
       default: return '未知';
     }
   }

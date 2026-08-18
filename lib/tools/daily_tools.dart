@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'dart:math';
+import 'dart:async';
 
 class DailyTools {
   static final List<Map<String, dynamic>> tools = [
@@ -400,16 +401,6 @@ class _CompassPainter extends CustomPainter {
       final x2 = center.dx + (radius - 15) * sin(angle);
       final y2 = center.dy - (radius - 15) * cos(angle);
       canvas.drawLine(Offset(x1, y1), Offset(x2, y2), paint);
-    }
-    const directions = ['N', 'E', 'S', 'W'];
-    final textPainter = TextPainter(textDirection: TextDirection.ltr);
-    for (int i = 0; i < 4; i++) {
-      final angle = i * 90 * pi / 180;
-      final x = center.dx + (radius - 30) * sin(angle);
-      final y = center.dy - (radius - 30) * cos(angle);
-      textPainter.text = TextSpan(text: directions[i], style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black));
-      textPainter.layout();
-      textPainter.paint(canvas, Offset(x - textPainter.width / 2, y - textPainter.height / 2));
     }
   }
   @override

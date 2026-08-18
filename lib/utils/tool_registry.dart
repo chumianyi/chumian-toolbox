@@ -115,7 +115,7 @@ class ToolRegistry {
     ToolItem(id: 'text_replace', name: '文本替换', description: '批量替换文本', icon: Icons.find_in_page, category: ToolCategory.dev, pageBuilder: (_) => const TextReplacePage()),
     ToolItem(id: 'case_convert', name: '大小写转换', description: '大小写格式转换', icon: Icons.text_format, category: ToolCategory.dev, pageBuilder: (_) => const CaseConvertPage()),
     ToolItem(id: 'zh_convert', name: '简繁转换', description: '简体繁体互转', icon: Icons.auto_awesome, category: ToolCategory.dev, pageBuilder: (_) => const SimpleDevPage(title: '简繁转换', hint: '输入中文文本...')),
-    ToolItem(id: 'word_count', name: '字数统计', description: '统计字数字符数', icon: Icons.count, category: ToolCategory.dev, pageBuilder: (_) => const WordCountPage()),
+    ToolItem(id: 'word_count', name: '字数统计', description: '统计字数字符数', icon: Icons.numbers, category: ToolCategory.dev, pageBuilder: (_) => const WordCountPage()),
     ToolItem(id: 'markdown', name: 'Markdown预览', description: 'Markdown实时预览', icon: Icons.preview, category: ToolCategory.dev, pageBuilder: (_) => const SimpleDevPage(title: 'Markdown预览', hint: '输入Markdown内容...')),
     ToolItem(id: 'sql_format', name: 'SQL格式化', description: '格式化SQL语句', icon: Icons.storage, category: ToolCategory.dev, pageBuilder: (_) => const SimpleDevPage(title: 'SQL格式化', hint: '粘贴SQL语句...')),
     ToolItem(id: 'csv_viewer', name: 'CSV查看器', description: '查看CSV数据', icon: Icons.table_chart, category: ToolCategory.dev, pageBuilder: (_) => const SimpleDevPage(title: 'CSV查看器', hint: '粘贴CSV数据...')),
