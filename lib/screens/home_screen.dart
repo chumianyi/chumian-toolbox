@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import '../models/tool_item.dart';
 import '../utils/tool_registry.dart';
 import '../providers/app_providers.dart';
-import 'tool_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

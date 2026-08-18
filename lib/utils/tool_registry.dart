@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../models/tool_item.dart';
-import 'system_tools.dart';
-import 'daily_tools.dart';
-import 'network_tools.dart';
-import 'image_tools.dart';
-import 'dev_tools.dart';
-import 'media_tools.dart';
+import '../tools/system_tools.dart';
+import '../tools/daily_tools.dart';
+import '../tools/network_tools.dart';
+import '../tools/image_tools.dart';
+import '../tools/dev_tools.dart';
+import '../tools/media_tools.dart';
 
 class ToolRegistry {
   static final List<ToolItem> _allTools = [
