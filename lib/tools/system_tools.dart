@@ -65,7 +65,6 @@ class _DeviceInfoPageState extends State<DeviceInfoPage> {
         '构建类型': info.type,
         'CPU架构': info.supportedAbis.join(', '),
         '屏幕分辨率': '${info.displayMetrics.widthPx.toInt()} x ${info.displayMetrics.heightPx.toInt()}',
-        '屏幕DPI': (info.displayMetrics.density * 160).toInt().toString(),
         '物理尺寸': '${info.displayMetrics.widthInches.toStringAsFixed(1)} x ${info.displayMetrics.heightInches.toStringAsFixed(1)} 英寸',
         '是否Root': info.isPhysicalDevice ? '否(物理设备)' : '是(模拟器)',
         '设备ID': info.id,
